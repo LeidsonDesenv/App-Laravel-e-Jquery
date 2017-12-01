@@ -1,0 +1,14 @@
+article{
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+article p{
+    text-indent: 20px;
+}
+.interaction p{
+    
+}
+.info-user p{
+    font-style: italic;
+}
