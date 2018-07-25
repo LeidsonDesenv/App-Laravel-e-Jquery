@@ -6,9 +6,11 @@ article{
 article p{
     text-indent: 20px;
 }
-.interaction p{
-    
-}
+
 .info-user p{
     font-style: italic;
+}
+
+.tab-content {
+    background-color: #fff;
 }

@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">    
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ url('css/app.css') }}">          
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">    
+    <link rel="stylesheet" href="{{ url('css/custom.css') }}">    
+          
           
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> @yield('title')</title>    
@@ -67,6 +69,15 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <script src="{{ url('js/myscript.js') }}">  </script>
           <script src="{{ asset('js/app.js') }}"></script>     
+          <script>
+            let $tabSignin = $("#signin");
+            
+            if($tabSignin != undefined && $tabSignin != null ) {
+              console.log($tabSignin);
+              $("#tabAccess li:eq(0) a").tab("show");
+            }         
+
+          </script>
   </body>
 </html>
 
