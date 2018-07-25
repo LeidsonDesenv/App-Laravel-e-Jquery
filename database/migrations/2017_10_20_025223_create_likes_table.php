@@ -20,7 +20,7 @@ class CreateLikesTable extends Migration
                     ->references('id')
                     ->on('users');
             $table->integer('post_id')->unsigned();
-            $table->foreign('user_id')
+            $table->foreign('post_id')
                     ->references('id')
                     ->on('posts');
             $table->boolean('like');

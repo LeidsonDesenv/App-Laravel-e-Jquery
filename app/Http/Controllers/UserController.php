@@ -26,7 +26,9 @@ class UserController extends Controller
         $email = $request['email'];
         if($request['password'] != $request['password2']){
              
-            return redirect()->route('welcome');
+            return redirect()->route('welcome')
+                ->withInput()
+                ->with('error', 'As senhas devem ser iguais');
             //return 'O valor dos campos de senha não são iguais.';
         }
         $password =  bcrypt( $request['password'] );

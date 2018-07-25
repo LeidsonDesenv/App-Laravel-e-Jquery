@@ -40,15 +40,15 @@
         <div role="tabpanel" class="tab-pane" id="signup" style="padding:5px">
             
                 <h3>Faça seu cadastro </h3>
-                    <form action="{{ route("signup") }}" method="post" >
+                    <form action="{{ route('signup') }}" method="post" >
                         <div class="form-group">
                             <label>Nome:</label>
                                 <input  class="form-control" type="text" name="name" id="name"
-                                    value=""   required/>
+                                    value="{{ old('name') }}"   required/>
                                 <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                                 <label>Email:</label>
                                     <input  class="form-control" type="email" name="email" id="email"
-                                        value="" required/>
+                                        value="{{ old('email') }}" required/>
                             </div>    
                             <label>Senha:</label>
                                 <input  class="form-control" type="password" name="password" id="password" required/>
