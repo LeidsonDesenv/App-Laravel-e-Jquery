@@ -39,17 +39,18 @@
             </div>
             
             <div class="interaction">
-                <a class="like" href="#">            
-                @if(  Auth::user()->likes()->where('post_id', $post->id)->first() )
-                    @if( Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 )
+                <a class="like" href="#">    
+
+                @if(  auth()->user()->likes->where('post_id', $post->id)->first() )
+                    @if( Auth::user()->likes->where('post_id', $post->id)->first()->like == 1 )
                         You Liked
                     @else
                         Like
                     @endif                
                 @else
                     Like
-                @endif
-                <span class='badge '>{{ $post->likes()->where('like',1)->count() }}</span>
+                @endif 
+                <span class='badge '> {{ $post->likes()->where('like',1)->count() }}</span>
                 </a> | 
                 <a class="like" href="#">
                 @if(  Auth::user()->likes()->where('post_id', $post->id)->first() )
@@ -60,14 +61,14 @@
                     @endif                
                 @else
                     Deslike
-                @endif          
+                @endif        
                 <span class='badge'>{{ $post->likes()->where('like',0)->count() }}</span>
                 </a> 
-                @if(Auth::user()->id == $post->user->id)
+                 @if(Auth::user()->id == $post->user->id) 
                 |                
                 <button id="edit" class="btn btn-link">Editar</button>|
                 <a href="{{ route('post.delete', [ 'id' => $post->id ] ) }}" id="del" class="btn btn-link">Deletar</a>
-                @endif
+                 @endif 
                 
             </div>
             
